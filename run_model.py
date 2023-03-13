@@ -54,9 +54,9 @@ if config.mode != 'cli':
     id_tr_df,  id_te_df = None, None
     ood_tr_df,  ood_te_df = None, None
     if id_tr_data_path is not None:
-        id_tr_df = pd.read_csv(id_tr_data_path)
+        id_tr_df = pd.read_csv(id_tr_data_path, delimiter='\t')
     if id_te_data_path is not None:
-        id_te_df = pd.read_csv(id_te_data_path)
+        id_te_df = pd.read_csv(id_te_data_path, delimiter='\t')
     if ood_tr_data_path is not None:
         ood_tr_df = pd.read_csv(ood_tr_data_path)
     if ood_te_data_path is not None:
