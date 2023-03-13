@@ -104,7 +104,7 @@ class DatasetLoader:
             self, df,
             term_key, polarity_label_key, category_label_key,
             text_col, aspect_col,
-            bos_instruction=''):
+            bos_instruction='', eos_instruction=''):
 
         """
         Prepare the data in the input format required.
@@ -118,7 +118,7 @@ class DatasetLoader:
         df['labels'] = df[aspect_col].apply(
             lambda x: ', '.join([f"{i[term_key]}:{i[category_label_key]}:{i[polarity_label_key]}" for i in x]))
         df['text'] = df[text_col].apply(
-            lambda x: bos_instruction + x)
+            lambda x: bos_instruction + x + eos_instruction)
         return df
 
     def set_data_for_training_semeval(self, tokenize_function):
