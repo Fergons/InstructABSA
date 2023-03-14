@@ -80,7 +80,7 @@ training_args = {
                 'push_to_hub': config.push_to_hub,
                 'eval_accumulation_steps': config.eval_accumulation_steps,
                 'predict_with_generate': config.predict_with_generate,
-                'loggins_steps': 1000000000, 
+                # 'loggins_steps': 1000000000,
                 'use_mps_device': use_mps
             }
 
@@ -114,10 +114,10 @@ if config.task == 'joint':
 
 if config.task == 'joint_ACSE':
     t5_exp = T5Generator(model_checkpoint)
-    bos_instruction_id = instruct_handler.joint[indomain]
+    bos_instruction_id = instruct_handler.joint_ACSE[indomain]
     if ood_tr_data_path is not None:
-        bos_instruction_ood = instruct_handler.joint[outdomain]
-    eos_instruction = instruct_handler.joint['eos_instruct']
+        bos_instruction_ood = instruct_handler.joint_ACSE[outdomain]
+    eos_instruction = instruct_handler.joint_ACSE['eos_instruct']
 
 if config.mode != 'cli':
     # Define function to load datasets and tokenize datasets
@@ -155,11 +155,11 @@ if config.mode != 'cli':
         if loader.train_df_id is not None:
             loader.train_df_id = loader.create_data_in_joint_task_aspect_category_sentiment_extraction_format(loader.train_df_id, 'term', 'polarity', 'category', 'raw_text', 'aspectTerms', bos_instruction_id, eos_instruction)
         if loader.test_df_id is not None:
-            loader.train_df_id = loader.create_data_in_joint_task_aspect_category_sentiment_extraction_format(loader.train_df_id, 'term', 'polarity', 'category', 'raw_text', 'aspectTerms', bos_instruction_id, eos_instruction)
+            loader.test_df_id = loader.create_data_in_joint_task_aspect_category_sentiment_extraction_format(loader.test_df_id, 'term', 'polarity', 'category', 'raw_text', 'aspectTerms', bos_instruction_id, eos_instruction)
         if loader.train_df_ood is not None:
-            loader.train_df_id = loader.create_data_in_joint_task_aspect_category_sentiment_extraction_format(loader.train_df_id, 'term', 'polarity', 'category', 'raw_text', 'aspectTerms', bos_instruction_ood, eos_instruction)
+            loader.train_df_ood = loader.create_data_in_joint_task_aspect_category_sentiment_extraction_format(loader.train_df_ood, 'term', 'polarity', 'category', 'raw_text', 'aspectTerms', bos_instruction_ood, eos_instruction)
         if loader.test_df_ood is not None:
-            loader.train_df_id = loader.create_data_in_joint_task_aspect_category_sentiment_extraction_format(loader.train_df_id, 'term', 'polarity', 'category', 'raw_text', 'aspectTerms', bos_instruction_ood, eos_instruction)
+            loader.test_df_ood = loader.create_data_in_joint_task_aspect_category_sentiment_extraction_format(loader.test_df_ood, 'term', 'polarity', 'category', 'raw_text', 'aspectTerms', bos_instruction_ood, eos_instruction)
     # Tokenize dataset
     id_ds, id_tokenized_ds, ood_ds, ood_tokenized_ds = loader.set_data_for_training_semeval(t5_exp.tokenize_function_inputs)    
 

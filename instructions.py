@@ -74,7 +74,7 @@ class InstructionsHandler:
         self.joint['delim_instruct'] = ''
         self.joint['eos_instruct'] = ''
 
-        self.joint_ACSE['bos_instruct2'] = """Definition: The output will be the aspect terms, the aspects and the aspects sentiment polarity. In cases where there are no aspects the output should be noaspect:none:none. In cases where there are no aspect terms the output for the term value should be noaspectterm.
+        self.joint_ACSE['bos_instruct1'] = """Definition: The output will be the aspect terms, the aspects and the aspects sentiment polarity. In cases where there are no aspects the output should be noaspect:none:none. In cases where there are no aspect terms the output for the term value should be noaspectterm.
                                 Positive example 1-
                                 input: Grafika je na úrovni, hra je pěkně zpracovaná a příběh je zajímavý.
                                 output: grafika:audio_visuals:positive, noaspectterm:performance_bugs:positive, příběh:story:positive
@@ -260,7 +260,7 @@ class InstructionsHandler:
         self.joint['delim_instruct'] = ''
         self.joint['eos_instruct'] = ' \noutput:'
 
-        self.joint_ACSE['bos_instruct2'] = """Definition: The output will be the aspect terms, the aspects and the aspects sentiment polarity. In cases where there are no aspects the output should be noaspect:none:none. In cases where there are no aspect terms the output for the term value should be noaspectterm.
+        self.joint_ACSE['bos_instruct1'] = """Definition: The output will be the aspect terms, the aspects and the aspects sentiment polarity. In cases where there are no aspects the output should be noaspect:none:none. In cases where there are no aspect terms the output for the term value should be noaspectterm.
                         Positive example 1-
                         input: Grafika je na úrovni, hra je pěkně zpracovaná a příběh je zajímavý.
                         output: grafika:audio_visuals:positive, noaspectterm:performance_bugs:positive, příběh:story:positive
