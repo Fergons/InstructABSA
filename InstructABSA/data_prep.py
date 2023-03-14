@@ -141,7 +141,6 @@ class DatasetLoader:
             df = self.reconstruct_strings_with_n_features(df, aspect_col, num_features=3)
         df['labels'] = df[aspect_col].apply(
             lambda x: ', '.join([f"{i[term_key]}:{i[category_label_key]}:{i[polarity_label_key]}" for i in x]))
-        print('labels', df['labels'][:10])
         df['text'] = df[text_col].apply(lambda x: bos_instruction + x + eos_instruction)
         return df
 
