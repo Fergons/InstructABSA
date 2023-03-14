@@ -75,47 +75,47 @@ class InstructionsHandler:
         self.joint['eos_instruct'] = ''
 
         self.joint_ACSE['bos_instruct1'] = """Definition: The output will be the aspect terms, the aspects and the aspects sentiment polarity. In cases where there are no aspects the output should be noaspect:none:none. In cases where there are no aspect terms the output for the term value should be noaspectterm.
-                                Positive example 1-
-                                input: Grafika je na úrovni, hra je pěkně zpracovaná a příběh je zajímavý.
-                                output: grafika:audio_visuals:positive, noaspectterm:performance_bugs:positive, příběh:story:positive
-                                Positive example 2- 
-                                input: Hra má pěknou grafiku, příjemný zvuk a pohodlné ovládání.
-                                output: grafika:audio_visuals:positive, zvuk:audio_visuals:positive, ovládání:gameplay:positive
-                                Negative example 1-
-                                input: Hra má několik velkých nedostatků, které ji značně omezují jako například nízká rozlišení, špatný zvuk a nepříjemné ovládání.
-                                output: rozlišení:audio_visuals:negative, zvuk:audio_visuals:negative, ovládání:gameplay:negative
-                                Negative example 2-
-                                input: Postavy jsou nevýrazné, grafika je špatná a hra je nesmyslná.
-                                output: postavy:story:negative, grafika:audio_visuals:negative, hra:overall:negative
-                                Neutral example 1-
-                                input: Hra není úplne k zahození, ale nejde o žádnou hru, která by byla nějakým zázrakem.
-                                output: hra:overall:neutral
-                                Neutral example 2-
-                                input: The game has multiplayer.
-                                output: multiplayer:gameplay:neutral
-                                Now complete the following example-
-                                input: """
+        Positive example 1-
+        input: Grafika je na úrovni, hra je pěkně zpracovaná a příběh je zajímavý.
+        output: grafika:audio_visuals:positive, noaspectterm:performance_bugs:positive, příběh:story:positive
+        Positive example 2- 
+        input: Hra má pěknou grafiku, příjemný zvuk a pohodlné ovládání.
+        output: grafika:audio_visuals:positive, zvuk:audio_visuals:positive, ovládání:gameplay:positive
+        Negative example 1-
+        input: Hra má několik velkých nedostatků, které ji značně omezují jako například nízká rozlišení, špatný zvuk a nepříjemné ovládání.
+        output: rozlišení:audio_visuals:negative, zvuk:audio_visuals:negative, ovládání:gameplay:negative
+        Negative example 2-
+        input: Postavy jsou nevýrazné, grafika je špatná a hra je nesmyslná.
+        output: postavy:story:negative, grafika:audio_visuals:negative, hra:overall:negative
+        Neutral example 1-
+        input: Hra není úplne k zahození, ale nejde o žádnou hru, která by byla nějakým zázrakem.
+        output: hra:overall:neutral
+        Neutral example 2-
+        input: The game has multiplayer.
+        output: multiplayer:gameplay:neutral
+        Now complete the following example-
+        input: """
         self.joint_ACSE['bos_instruct2'] = """Definition: The output will be the aspect terms, the aspects and the aspects sentiment polarity. In cases where there are no aspects the output should be noaspect:none:none. In cases where there are no aspect terms the output for the term value should be noaspectterm.
-                        Positive example 1-
-                        input: Grafika je na úrovni, hra je pěkně zpracovaná a příběh je zajímavý.
-                        output: grafika:audio_visuals:positive, noaspectterm:performance_bugs:positive, příběh:story:positive
-                        Positive example 2- 
-                        input: Hra má pěknou grafiku, příjemný zvuk a pohodlné ovládání.
-                        output: grafika:audio_visuals:positive, zvuk:audio_visuals:positive, ovládání:gameplay:positive
-                        Negative example 1-
-                        input: Hra má několik velkých nedostatků, které ji značně omezují jako například nízká rozlišení, špatný zvuk a nepříjemné ovládání.
-                        output: rozlišení:audio_visuals:negative, zvuk:audio_visuals:negative, ovládání:gameplay:negative
-                        Negative example 2-
-                        input: Postavy jsou nevýrazné, grafika je špatná a hra je nesmyslná.
-                        output: postavy:story:negative, grafika:audio_visuals:negative, hra:overall:negative
-                        Neutral example 1-
-                        input: Hra není úplne k zahození, ale nejde o žádnou hru, která by byla nějakým zázrakem.
-                        output: hra:overall:neutral
-                        Neutral example 2-
-                        input: The game has multiplayer.
-                        output: multiplayer:gameplay:neutral
-                        Now complete the following example-
-                        input: """
+        Positive example 1-
+        input: Grafika je na úrovni, hra je pěkně zpracovaná a příběh je zajímavý.
+        output: grafika:audio_visuals:positive, noaspectterm:performance_bugs:positive, příběh:story:positive
+        Positive example 2- 
+        input: Hra má pěknou grafiku, příjemný zvuk a pohodlné ovládání.
+        output: grafika:audio_visuals:positive, zvuk:audio_visuals:positive, ovládání:gameplay:positive
+        Negative example 1-
+        input: Hra má několik velkých nedostatků, které ji značně omezují jako například nízká rozlišení, špatný zvuk a nepříjemné ovládání.
+        output: rozlišení:audio_visuals:negative, zvuk:audio_visuals:negative, ovládání:gameplay:negative
+        Negative example 2-
+        input: Postavy jsou nevýrazné, grafika je špatná a hra je nesmyslná.
+        output: postavy:story:negative, grafika:audio_visuals:negative, hra:overall:negative
+        Neutral example 1-
+        input: Hra není úplne k zahození, ale nejde o žádnou hru, která by byla nějakým zázrakem.
+        output: hra:overall:neutral
+        Neutral example 2-
+        input: The game has multiplayer.
+        output: multiplayer:gameplay:neutral
+        Now complete the following example-
+        input: """
         self.joint_ACSE['delim_instruct'] = ''
         self.joint_ACSE['eos_instruct'] = ' \noutput:'
 
@@ -261,46 +261,46 @@ class InstructionsHandler:
         self.joint['eos_instruct'] = ' \noutput:'
 
         self.joint_ACSE['bos_instruct1'] = """Definition: The output will be the aspect terms, the aspects and the aspects sentiment polarity. In cases where there are no aspects the output should be noaspect:none:none. In cases where there are no aspect terms the output for the term value should be noaspectterm.
-                        Positive example 1-
-                        input: Grafika je na úrovni, hra je pěkně zpracovaná a příběh je zajímavý.
-                        output: grafika:audio_visuals:positive, noaspectterm:performance_bugs:positive, příběh:story:positive
-                        Positive example 2- 
-                        input: Hra má pěknou grafiku, příjemný zvuk a pohodlné ovládání.
-                        output: grafika:audio_visuals:positive, zvuk:audio_visuals:positive, ovládání:gameplay:positive
-                        Negative example 1-
-                        input: Hra má několik velkých nedostatků, které ji značně omezují jako například nízká rozlišení, špatný zvuk a nepříjemné ovládání.
-                        output: rozlišení:audio_visuals:negative, zvuk:audio_visuals:negative, ovládání:gameplay:negative
-                        Negative example 2-
-                        input: Postavy jsou nevýrazné, grafika je špatná a hra je nesmyslná.
-                        output: postavy:story:negative, grafika:audio_visuals:negative, hra:overall:negative
-                        Neutral example 1-
-                        input: Hra není úplne k zahození, ale nejde o žádnou hru, která by byla nějakým zázrakem.
-                        output: hra:overall:neutral
-                        Neutral example 2-
-                        input: The game has multiplayer.
-                        output: multiplayer:gameplay:neutral
-                        Now complete the following example-
-                        input: """
+        Positive example 1-
+        input: Grafika je na úrovni, hra je pěkně zpracovaná a příběh je zajímavý.
+        output: grafika:audio_visuals:positive, noaspectterm:performance_bugs:positive, příběh:story:positive
+        Positive example 2- 
+        input: Hra má pěknou grafiku, příjemný zvuk a pohodlné ovládání.
+        output: grafika:audio_visuals:positive, zvuk:audio_visuals:positive, ovládání:gameplay:positive
+        Negative example 1-
+        input: Hra má několik velkých nedostatků, které ji značně omezují jako například nízká rozlišení, špatný zvuk a nepříjemné ovládání.
+        output: rozlišení:audio_visuals:negative, zvuk:audio_visuals:negative, ovládání:gameplay:negative
+        Negative example 2-
+        input: Postavy jsou nevýrazné, grafika je špatná a hra je nesmyslná.
+        output: postavy:story:negative, grafika:audio_visuals:negative, hra:overall:negative
+        Neutral example 1-
+        input: Hra není úplne k zahození, ale nejde o žádnou hru, která by byla nějakým zázrakem.
+        output: hra:overall:neutral
+        Neutral example 2-
+        input: The game has multiplayer.
+        output: multiplayer:gameplay:neutral
+        Now complete the following example-
+        input: """
         self.joint_ACSE['bos_instruct2'] = """Definition: The output will be the aspect terms, the aspects and the aspects sentiment polarity. In cases where there are no aspects the output should be noaspect:none:none. In cases where there are no aspect terms the output for the term value should be noaspectterm.
-                Positive example 1-
-                input: Grafika je na úrovni, hra je pěkně zpracovaná a příběh je zajímavý.
-                output: grafika:audio_visuals:positive, noaspectterm:performance_bugs:positive, příběh:story:positive
-                Positive example 2- 
-                input: Hra má pěknou grafiku, příjemný zvuk a pohodlné ovládání.
-                output: grafika:audio_visuals:positive, zvuk:audio_visuals:positive, ovládání:gameplay:positive
-                Negative example 1-
-                input: Hra má několik velkých nedostatků, které ji značně omezují jako například nízká rozlišení, špatný zvuk a nepříjemné ovládání.
-                output: rozlišení:audio_visuals:negative, zvuk:audio_visuals:negative, ovládání:gameplay:negative
-                Negative example 2-
-                input: Postavy jsou nevýrazné, grafika je špatná a hra je nesmyslná.
-                output: postavy:story:negative, grafika:audio_visuals:negative, hra:overall:negative
-                Neutral example 1-
-                input: Hra není úplne k zahození, ale nejde o žádnou hru, která by byla nějakým zázrakem.
-                output: hra:overall:neutral
-                Neutral example 2-
-                input: The game has multiplayer.
-                output: multiplayer:gameplay:neutral
-                Now complete the following example-
-                input: """
+        Positive example 1-
+        input: Grafika je na úrovni, hra je pěkně zpracovaná a příběh je zajímavý.
+        output: grafika:audio_visuals:positive, noaspectterm:performance_bugs:positive, příběh:story:positive
+        Positive example 2- 
+        input: Hra má pěknou grafiku, příjemný zvuk a pohodlné ovládání.
+        output: grafika:audio_visuals:positive, zvuk:audio_visuals:positive, ovládání:gameplay:positive
+        Negative example 1-
+        input: Hra má několik velkých nedostatků, které ji značně omezují jako například nízká rozlišení, špatný zvuk a nepříjemné ovládání.
+        output: rozlišení:audio_visuals:negative, zvuk:audio_visuals:negative, ovládání:gameplay:negative
+        Negative example 2-
+        input: Postavy jsou nevýrazné, grafika je špatná a hra je nesmyslná.
+        output: postavy:story:negative, grafika:audio_visuals:negative, hra:overall:negative
+        Neutral example 1-
+        input: Hra není úplne k zahození, ale nejde o žádnou hru, která by byla nějakým zázrakem.
+        output: hra:overall:neutral
+        Neutral example 2-
+        input: The game has multiplayer.
+        output: multiplayer:gameplay:neutral
+        Now complete the following example-
+        input: """
         self.joint_ACSE['delim_instruct'] = ''
         self.joint_ACSE['eos_instruct'] = ' \noutput:'
